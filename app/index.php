@@ -37,7 +37,7 @@
                 $score = 327;
 
                 echo "<p> {$firstname} a obtenu {$score}  points à cette partie. </p>";
-                
+
                 echo '<p>' . $firstname . ' a obtenu ' . $score . ' points à cette partie.  </p>';
                 ?>
                 <p> <?= $firstname ?> a obtenu <?= $score ?> points à cette partie.</p>
@@ -50,14 +50,23 @@
             <h2 class="exercice-ttl">Question 2</h2>
             <p class="exercice-txt">Afficher dans une liste HTML le nom des produits suivants et leurs prix.</p>
             <div class="exercice-sandbox">
-                <?php
-                $nameProduct1 = "arc";
-                $priceProduct1 = 10.30;
-                $nameProduct2 = "flèche";
-                $priceProduct2 = 2.90;
-                $nameProduct3 = "potion";
-                $priceProduct3 = 5.20;
-                ?>
+                <ul>
+                    <?php
+
+                    $nameProduct1 = "arc";
+                    $priceProduct1 = 10.30;
+                    $nameProduct2 = "flèche";
+                    $priceProduct2 = 2.90;
+                    $nameProduct3 = "potion";
+                    $priceProduct3 = 5.20;
+
+                    echo "<li>un  {$nameProduct1} coûte {$priceProduct1}</li>"
+                        . "<li>une  {$nameProduct2} coûte {$priceProduct2}</li>"
+                        . "<li>une  {$nameProduct3} coûte {$priceProduct3}</li>";
+
+                    ?>
+                </ul>
+
             </div>
         </section>
 
