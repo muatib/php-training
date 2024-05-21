@@ -79,7 +79,19 @@
                 $quantityProduct1 = 1;
                 $quantityProduct2 = 10;
                 $quantityProduct3 = 4;
+
+                $totalPrice = 0;
+
+                $totalPrice += $priceProduct1 * $quantityProduct1;
+                $totalPrice += $priceProduct2 * $quantityProduct2;
+                $totalPrice += $priceProduct3 * $quantityProduct3;
+
+                $discount = 0.9;
+
+                $discountedTotal = $totalPrice * $discount;
+
                 ?>
+                <p>Le prix total est de <?= number_format($totalPrice, 2) ?>€ et de <?= number_format($discountedTotal, 2) ?>€ une fois remisé.</p>
             </div>
         </section>
 
