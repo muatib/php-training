@@ -322,7 +322,7 @@
                     }
                 }
 
-                echo "<p>Le joueur le plus jeune est " . $youngestPlayer['name'] . " et il a " . $youngestPlayer['age'] . " ans.</p>";
+                echo '<p>Le joueur le plus jeune est ' . $youngestPlayer['name'] . ' et il a ' . $youngestPlayer['age'] . ' ans.</p>';
 
                 ?>
             </div>
