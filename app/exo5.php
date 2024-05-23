@@ -78,7 +78,17 @@ try {
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
             <div class="exercice-sandbox">
+                <?php 
+                $json = file_get_contents('datas/series.json');
+
+                $series = json_decode($json, true);
+                foreach ($series as $serie) {
+                    echo "<h2>" . $serie['name'] . "</h2>";
+                    echo "<img src='" . $serie['image'] . "' alt='" . $serie['name'] . "' />";
+                }
                 
+                
+                ?>
             </div>
         </section>
 
