@@ -20,6 +20,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/exo5.css">
     <title>Introduction PHP - Exo 5</title>
 </head>
 
@@ -50,10 +51,6 @@ try {
             <p class="exercice-txt">Récupérer dans un tableau puis afficher l'ensemble des plateformes de diffusion des séries. Afficher les par ordre alphabétique.</p>
             <div class="exercice-sandbox">
                 <?php
-                $json = file_get_contents('datas/series.json');
-
-                $series = json_decode($json, true);
-
                 $platforms = [];
                 foreach ($series as $serie) {
                     $platform = $serie['availableOn'];
@@ -78,17 +75,17 @@ try {
             <p class="exercice-txt">Afficher la liste de toutes les séries avec l'image principale et son titre</p>
             <p class="exercice-txt">Afficher une seule série par ligne sur les plus petits écrans, 2 séries par ligne sur les écrans intermédiaires et 4 séries par ligne sur un écran d'ordinateur.</p>
             <div class="exercice-sandbox">
-                <?php 
-                $json = file_get_contents('datas/series.json');
+                <ul class="series-lst">
+                    <?php
 
-                $series = json_decode($json, true);
-                foreach ($series as $serie) {
-                    echo "<h2>" . $serie['name'] . "</h2>";
-                    echo "<img src='" . $serie['image'] . "' alt='" . $serie['name'] . "' />";
-                }
-                
-                
-                ?>
+                    foreach ($series as $serie) {
+
+                        echo "<li><a href= 'exo5.php?serie={$serie['id']}' ><h2> {$serie['name']}</h2>
+                        <img class='series-img' src= '{$serie['image']}' alt='{$serie['name']}' /></a></li>";
+                    }
+
+                    ?>
+                </ul>
             </div>
         </section>
 
@@ -108,7 +105,7 @@ try {
             <p class="exercice-txt">Si l'URL de la page appelée comporte l'identifiant d'une série, alors afficher toutes les informations de la série ci-dessous.</p>
             <p class="exercice-txt">Si l'identifiant ne correspond à aucune série, afficher un message d'erreur.</p>
             <div class="exercice-sandbox">
-
+                $_GET
             </div>
         </section>
 

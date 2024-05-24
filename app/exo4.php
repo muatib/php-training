@@ -62,13 +62,12 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <div class="exercice-sandbox">
                 <ul>
                     <?php
-                    /**
-                     * 
-                     *
-                     * @param array 
-                     *
-                     * @return string 
-                     */
+                /**
+                 * Undocumented function
+                 *
+                 * @param array $arrayA
+                 * @return string
+                 */
                     function getEvenValuesAsHtmlList(array $arrayA): string
                     {
                         $html = '';
@@ -95,7 +94,13 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <h2 class="exercice-ttl">Question 3</h2>
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et retourne uniquement les entiers d'index pair</p>
             <div class="exercice-sandbox">
-                <?php
+                <?
+                /**
+                 * return only even value
+                 *
+                 * @param array $array
+                 * @return array
+                 */
                 function getEvenIndexValues($array)
                 {
                     $result = array();
@@ -120,6 +125,12 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers. La fonction doit retourner les valeurs du tableau mulipliées par 2.</p>
             <div class="exercice-sandbox">
                 <?php
+                /**
+                 * return vakue from an array multiply by a defined value
+                 *
+                 * @param array $array
+                 * @return array
+                 */
                 function multiplyByTwo($array)
                 {
                     $result = array();
@@ -141,6 +152,13 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers et un entier. La fonction doit retourner les valeurs du tableau divisées par le second paramètre</p>
             <div class="exercice-sandbox">
                 <?php
+                /**
+                 * divide an array with a defined value
+                 *
+                 * @param array $array
+                 * @param int $number
+                 * @return array
+                 */
                 function divideByNumber($array, $number)
                 {
 
@@ -162,6 +180,12 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau d'entiers ou de chaînes de caractères et retourne le tableau sans doublons</p>
             <div class="exercice-sandbox">
                 <?php
+                /**
+                 * return an array without duplicate
+                 *
+                 * @param array $arrayA
+                 * @return array
+                 */
                 function removeDuplicates($arrayA)
                 {
                     return array_unique($arrayA);
@@ -180,6 +204,13 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre 2 tableaux et retourne un tableau représentant l'intersection des 2</p>
             <div class="exercice-sandbox">
                 <?php
+                /**
+                 * get intersection of two arrays
+                 *
+                 * @param array $arrayA
+                 * @param array $arrayB
+                 * @return array
+                 */
                 function getArrayIntersection($arrayA, $arrayB)
                 {
                     return array_intersect($arrayA, $arrayB);
@@ -198,6 +229,13 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre 2 tableaux et retourne un tableau des valeurs du premier tableau qui ne sont pas dans le second</p>
             <div class="exercice-sandbox">
                 <?php
+                /**
+                 * compare two array to return unmatch values
+                 *
+                 * @param array $arrayA
+                 * @param array $arrayB
+                 * @return array
+                 */
                 function compareArray($arrayA, $arrayB)
                 {
                     return array_diff($arrayA, $arrayB);
@@ -217,6 +255,14 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Réécrire la fonction précédente pour lui ajouter un paramètre booléen facultatif. Si celui-ci est à true, le tableau retourné sera sans doublons</p>
             <div class="exercice-sandbox">
                 <?php
+                /**
+                 * return comparaison of two arrays
+                 *
+                 * @param array $arrayA
+                 * @param array $arrayB
+                 * @param boolean remove duplicate values
+                 * @return array
+                 */
                 function compareTwoArray($arrayA, $arrayB, $removeDuplicates = false)
                 {
                     $diffArray = array_values(array_diff($arrayA, $arrayB));
@@ -238,19 +284,17 @@ $arrayB = [85, "toi", 95, "la", 65, 94, 85, "avec", 37, "chat"];
             <p class="exercice-txt">Déclarer une fonction qui prend en paramètre un tableau et un entier et retourne les n premiers éléments du tableau.</p>
             <div class="exercice-sandbox">
                 <?php
-                function getFirstElements($array, $n)
+                function getFirstElements(array $array, int $n): array
                 {
                     if ($n < 0 || $n > count($array)) {
                         return "Erreur : La valeur de n doit être comprise entre 0 et " . count($array);
                     }
-
                     return array_slice($array, 0, $n);
                 }
-
                 $firstElements = getFirstElements($arrayB, 5);
 
                 if (is_array($firstElements)) {
-                    var_dump ($firstElements);
+                    var_dump($firstElements);
                 } else {
                     echo $firstElements;
                 }

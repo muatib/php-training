@@ -1,0 +1,26 @@
+*{
+    list-style: none;
+}
+
+
+
+.series-lst {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+  /* align-items: ; */
+  font-size: 14px;
+ 
+ 
+}
+.series-img{
+     margin: 5px;
+}
+
+@media screen and (min-width: 1000px) {
+    .series-img{
+        width: 200px;
+    }
+}
